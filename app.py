@@ -5,6 +5,11 @@ import plotly.express as px
 import plotly.graph_objects as go
 from scipy.stats import gaussian_kde
 
+from prophet import Prophet
+import logging
+
+logging.getLogger("cmdstanpy").disabled = True
+
 
 # ---------------- Style Enhancements ----------------
 st.markdown("""
@@ -224,11 +229,6 @@ ax.grid(True)
 
 # Display in Streamlit
 st.pyplot(fig)
-
-
-# 2️⃣ Scatter
-
-
 # 3️⃣ Suicide Rate by Generation
 import streamlit as st
 import plotly.graph_objects as go
@@ -960,6 +960,9 @@ st.write(
 )
 
 from prophet import Prophet
+import logging
+
+logging.getLogger("cmdstanpy").disabled = True
 import plotly.graph_objects as go
 
 # -----------------------------
@@ -998,7 +1001,7 @@ years_to_predict = st.slider(
 # -----------------------------
 future = model.make_future_dataframe(
     periods=years_to_predict,
-    freq='Y'
+    freq='YE'
 )
 
 # Predict
