@@ -5,4 +5,6 @@ plotly
 scipy
 matplotlib
 plotly
-sklearn
+scikit-learn
+prophet
+cmdstanpy
